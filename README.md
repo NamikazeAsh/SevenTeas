@@ -4,6 +4,8 @@ A website created as a college project which utilizes HTML / CSS / JS / PHP for 
 
 Will not work with GitHub pages , you'll have to download the whole thing
 
+PS: No templates used by me on the user's end and the backend-frontend.
+
 # Pre-requesites
 > Creating the database under the name ebooks
 > Adding the following tables with the below given descriptions
@@ -38,3 +40,35 @@ Will not work with GitHub pages , you'll have to download the whole thing
 
 
 ![image](https://user-images.githubusercontent.com/84863353/167597414-72f46b9c-088a-4d02-bd7b-ef021fd895be.png)
+
+# Preview of the pages
+> Home
+
+![image](https://user-images.githubusercontent.com/84863353/167948463-b8dddcb1-d0e0-47f1-afff-444988bc7a24.png)
+
+> About Us
+
+![image](https://user-images.githubusercontent.com/84863353/167948556-d2304b65-c217-42e5-a928-08ab6a27a8fb.png)
+
+> Showcase
+
+![image](https://user-images.githubusercontent.com/84863353/167948575-27d8cbe0-1299-449f-97e6-755190b892d4.png)
+
+> Browse
+
+![image](https://user-images.githubusercontent.com/84863353/167948617-23ae4deb-5ae9-4a87-a0e2-5d2008040337.png)
+
+> Login
+
+![image](https://user-images.githubusercontent.com/84863353/167948647-4082dd35-92f5-46c4-8376-52955a928cea.png)
+
+> Signup
+
+![image](https://user-images.githubusercontent.com/84863353/167948780-8bf4052d-0127-46eb-8259-80f68721c7e7.png)
+
+> User's Dashboard
+
+![image](https://user-images.githubusercontent.com/84863353/167948821-fc2dec91-ad70-4bc1-86bb-2a2738ef8a2b.png)
+
+> Admin's Dashboard
+
