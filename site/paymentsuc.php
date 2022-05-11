@@ -146,7 +146,13 @@
         echo "Not successful transaction rec";
     }
 ?>
-
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
 <body>
     
     <div class="paymentpane">
@@ -160,7 +166,7 @@
         <div class="tickimg"></div>
 
         <div class="proceedbtn">
-            <button type="button" id="proceedbtn" style="width: 238px;height: 55px;left: 231px;top: 709px;background: transparent;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 50px;border: 0px;font-family: 'Saira';font-style: normal;font-weight: 400;font-size: 24px;line-height: 38px;color: #FFFFFF;text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" onclick="javascript:location='./showcase.html'">Close</button>
+            <button type="button" id="proceedbtn" style="width: 238px;height: 55px;left: 231px;top: 709px;background: transparent;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 50px;border: 0px;font-family: 'Saira';font-style: normal;font-weight: 400;font-size: 24px;line-height: 38px;color: #FFFFFF;text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" onclick="javascript:location='./showcase.php'">Close</button>
         </div>
 
 

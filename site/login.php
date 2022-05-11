@@ -115,15 +115,14 @@
         position: absolute;
         width: 118px;
         height: 33px;
-        left: 800px;
-        top: 386px;
+        left: 780px;
+        top: 378px;
         font-family: Nunito Sans;
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
         line-height: 33px;
         color: #FFFFFF;
-
         display: flex;
     }
 
@@ -131,8 +130,8 @@
         position: absolute;
         width: 112px;
         height: 33px;
-        left: 800px;
-        top: 484px;
+        left: 782px;
+        top: 479px;
         font-family: Nunito Sans;
         font-style: normal;
         font-weight: normal;
@@ -342,6 +341,14 @@
 </style>
 
 
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
+
 <?php
 
     $servername = "localhost";
@@ -375,7 +382,7 @@
             }
             
             else{
-                echo "<script>window.location.href='./showcase.html';</script>";
+                echo "<script>window.location.href='./showcase.php';</script>";
             }
 
             $sql2 = "insert into curuser(username,password) values('$uname','$pword')";
@@ -412,20 +419,39 @@
 <body>
     
     <div class = "bg">
-        
+
         <div class="navbar">  
+            
+            <div class="displaycuser" style="padding-left:20px;font-size: 25px;color:white;font-family:Montserrat;">
+                <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "ebooks";
+                
+                    $conn = new mysqli($servername, $username, $password,$dbname);
+                    
+                    $checkuq = "select * from curuser";
+                    $checkuqr = $conn -> query($checkuq);
+
+                    if($checkuqr -> num_rows == 1){
+                        $dispu = $checkuqr -> fetch_assoc();
+                        echo $dispu["username"];
+                    }
+                    
+                ?>
+            </div>
 
             <div class="navbar-links">
                 <ul>
-                    <li><a href="" style = "font-size: 18px;">Home</a></li>
-                    <li><a href="" style = "font-size: 18px;">About</a></li>
-                    <li><a href="./showcase.html" style = "font-size: 18px;">Showcase</a></li>
+                    <li><a href="./ria/homepg.php" style = "font-size: 18px;">Home</a></li>
+                    <li><a href="./ria/aboutpg.php" style = "font-size: 18px;">About</a></li>
+                    <li><a href="./showcase.php" style = "font-size: 18px;">Showcase</a></li>
                     <li><a href="http://localhost/browse.php" style = "font-size: 18px;">Browse</a></li>
                     <li><a href="http://localhost/dashboard.php" style = "font-size: 18px;">Dashboard</a></li>
-                    <li><a href="http://localhost/login.php" style = "font-size: 18px;">Login | SignUp</a></li>
+                    <!-- <li><a href="http://localhost/login.php" style = "font-size: 18px;">Login | SignUp</a></li> -->
                 </ul>
             </div>
-                        
         </div>
 
         <div class="logo">
@@ -464,8 +490,6 @@
             </div>
 
         </form>
-
-
 
         <div class="or">
             or

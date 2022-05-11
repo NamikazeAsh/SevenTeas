@@ -256,22 +256,40 @@
 
 ?>
 
-
-
 <body>
     
     <div class = "bg">
         
         <div class="navbar">  
 
+        <div class="displaycuser" style="padding-left:20px;font-size: 25px;color:white;font-family:Montserrat;">
+                <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "ebooks";
+                
+                    $conn = new mysqli($servername, $username, $password,$dbname);
+                    
+                    $checkuq = "select * from curuser";
+                    $checkuqr = $conn -> query($checkuq);
+
+                    if($checkuqr -> num_rows == 1){
+                        $dispu = $checkuqr -> fetch_assoc();
+                        echo $dispu["username"];
+                    }
+                    
+                ?>
+            </div>
+
             <div class="navbar-links">
                 <ul>
-                    <li><a href="" style = "font-size: 18px;">Home</a></li>
-                    <li><a href="" style = "font-size: 18px;">About</a></li>
-                    <li><a href="./showcase.html" style = "font-size: 18px;">Showcase</a></li>
+                    <li><a href="./ria/homepg.php" style = "font-size: 18px;">Home</a></li>
+                    <li><a href="./ria/aboutpg.php" style = "font-size: 18px;">About</a></li>
+                    <li><a href="./showcase.php" style = "font-size: 18px;">Showcase</a></li>
                     <li><a href="http://localhost/browse.php" style = "font-size: 18px;">Browse</a></li>
                     <li><a href="http://localhost/dashboard.php" style = "font-size: 18px;">Dashboard</a></li>
-                    <li><a href="http://localhost/login.php" style = "font-size: 18px;">Login | SignUp</a></li>
+                    <!-- <li><a href="http://localhost/login.php" style = "font-size: 18px;">Login | SignUp</a></li> -->
                 </ul>
             </div>
 

@@ -261,39 +261,16 @@
         background-color: #928484;
     }
 
-    .payamtpane{
-        position: absolute;
-        width: 255px;
-        height: 117px;
-        left: 735px;
-        top: 380px;
-
-        background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 100px;
-    }
-
-    .lamt{
-        position: absolute;
-        width: 134px;
-        height: 39px;
-        left: 57px;
-        top: 10px;
-
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 39px;
-        color: #9C5F5F;
-
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
 </style>
 
 
-
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
 
 
 <body>
@@ -345,19 +322,7 @@
                 <button type="button" id="backbtn" style="background-color: transparent;border: 0px;color: #C14F4F;font-family: 'Montserrat';font-style: normal;font-weight: 600;font-size: 30px;width: 28px;height: 59px;left: 87px;top: 700px;text-align: center;align-items: center;" onclick="javascript:location='http://localhost/browse.php'"><</button>
             </div>
 
-            <div class="payamtpane">
-
-                <div class="lamt">Amount</div>
-                <div class="famt">
-                    <input type="text" id="amt" name="amt" placeholder="Amount($)" style="position: absolute;top:70px;left:30px;width: 191px;height: 25px;background: #C4C4C4;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 50px;font-family: 'Montserrat';font-style: normal;font-weight: 600;font-size: 24px;line-height: 29px;color:crimson;text-align: center;border: 0px;" required>
-                </div>
-
-            </div>
-
-
         </form>
-
-
 
     </div>
 

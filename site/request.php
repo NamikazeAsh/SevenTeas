@@ -28,7 +28,7 @@
         $sql = "insert into request(reqbook) values('$reqbooke')";
         
         if(mysqli_query($conn,$sql)){
-            echo "Done";
+            echo "<script>alert('Request sent to administrators , will be considered.')</script>";
             unset($reqbooke);
         }
         else{

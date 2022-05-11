@@ -12,7 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Saira&display=swap" rel="stylesheet">
 
 </head>
-
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
 <?php
 
 $servername = "localhost";
@@ -42,7 +48,7 @@ else if($result -> num_rows >0){
         if ($conn->query($sql) === TRUE) {
             $msg = "Logged out!";
             echo "<script> alert('$msg') </script>";
-            header("Location: http://localhost/showcase.html");
+            header("Location: http://localhost/showcase.php");
         } 
         else {
             $msg = "Unsuccessful Log Out!";
