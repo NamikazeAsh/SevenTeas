@@ -363,6 +363,8 @@
                     <option value="Fantasy">Fantasy</option>
                     <option value="mystery">Mystery</option>
                     <option value="adventure">Adventure</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="novel">Novel</option>
                 </select>
             </div>
 
@@ -407,60 +409,31 @@
                         if(isset($_POST['submit'])){
 
                             $filrating = $_POST['rating'];
+                            $filratingarr = explode("-",$filrating);
+
                             $filprice = $_POST['price'];
+                            $filpricearr = explode("-",$filprice);
+
                             $filyear = $_POST['year'];
                             $filgenre = $_POST['genre'];
                             $searchbook = $_POST['searchbar'];
                     
-                            if($filrating == "4.5-5"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 4.5 and 5";
+                            if($filrating!="Rating"){
+                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between " . $filratingarr[0] . " and " . $filratingarr[1];
+                                if($filprice!="Price"){
+                                    $ratingq ="select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between " . $filratingarr[0] . " and " . $filratingarr[1] . "and prices between ". $filpricearr[0]." and ". $filpricearr[1];
+                                    if($filyear!="Year"){
+                                        $ratingq ="select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between " . $filratingarr[0] . " and " . $filratingarr[1] . "and prices between ". $filpricearr[0]." and ". $filpricearr[1] . " and publication_year = " . $filyear;
+                                        if($filgenre!="Genre"){
+                                            $ratingq ="select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between " . $filratingarr[0] . " and " . $filratingarr[1] . "and prices between ". $filpricearr[0]." and ". $filpricearr[1] . " and publication_year = " . $filyear . " and genre = '" . $filgenre ."'";
+                                        }
+                                    }
+                                }
                                 $result = $conn -> query($ratingq);
                             }
 
-                            else if($filrating == "4-4.5"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 4 and 4.5";
-                                $result = $conn -> query($ratingq);
-                            }
-                            
-                            else if($filrating == "3.5-4"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 3.5 and 4";
-                                $result = $conn -> query($ratingq);
-                            }
-
-                            else if($filrating == "3-3.5"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 3 and 3.5";
-                                $result = $conn -> query($ratingq);
-                            }
-
-                            else if($filrating == "2.5-3"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 2.5 and 3";
-                                $result = $conn -> query($ratingq);
-                            }
-
-                            else if($filrating == "2-2.5"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 2 and 2.5";
-                                $result = $conn -> query($ratingq);
-                            }
-
-                            else if($filrating == "1-5-2"){
-                                $ratingq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where rating between 1.5 and 2";
-                                $result = $conn -> query($ratingq);
-                            }
-
-                            else if($filprice == "15-20"){
-                                $priceq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where prices between 15 and 20";
-                                $result = $conn -> query($priceq);
-                            }
-                            else if($filprice == "20-25"){
-                                $priceq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where prices between 20 and 25";
-                                $result = $conn -> query($priceq);
-                            }
-                            else if($filprice == "25-30"){
-                                $priceq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where prices between 25 and 30";
-                                $result = $conn -> query($priceq);
-                            }
-                            else if($filprice == "30-35"){
-                                $priceq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where prices between 30 and 35";
+                            else if($filprice!="Price"){
+                                $priceq = "select bookid,title,author,genre,rating,isbn,language,publication_year,prices from ebooks where prices between " . $filpricearr[0] . " and " . $filpricearr[1];
                                 $result = $conn -> query($priceq);
                             }
                             
