@@ -70,5 +70,4 @@ PS: No templates used by me on the user's end and the backend-frontend.
 
 ![image](https://user-images.githubusercontent.com/84863353/167948821-fc2dec91-ad70-4bc1-86bb-2a2738ef8a2b.png)
 
-> Admin's Dashboard
 
