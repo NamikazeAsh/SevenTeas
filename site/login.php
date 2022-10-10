@@ -496,7 +496,7 @@
         </div>
 
         <div class="signupbox">
-            <button type="button" id="signup" style="font-size: 17px;font-weight: bold;background-color: transparent;color: white;width: 125px;height: 41px;border: transparent;font-family:Nunito Sans;">Sign Up</button>
+            <a href="./trial/index.html"><button type="button" id="signup" style="font-size: 17px;font-weight: bold;background-color: transparent;color: white;width: 125px;height: 41px;border: transparent;font-family:Nunito Sans;">Sign Up</button></a>
         </div>
 
         <div class="forgotphl">
